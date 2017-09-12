@@ -5,6 +5,8 @@ import Players from "./Players.js"
 
 import './App.css';
 
+
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -13,12 +15,22 @@ class App extends Component {
       heap : 10,
       turn: "player1"
     }
-  
+  }
+    clickHandler(){
+
+      this.setState({
+        heap: 5,
+        turn: "player2"
+      });
+
+    
+    
+
     }
 
-     subtraction(){
-      this.setState({heap: 3})
-    }
+  
+
+    
 
 
 
@@ -34,8 +46,8 @@ class App extends Component {
         <div>
           <Players players={this.state.turn}/>
           </div>
-          <input type="text" />
-          <button onClick={this.subtraction}>Take Away</button>
+          <input type="text"/>
+          <button type="submit" onClick={this.clickHandler.bind(this)}>Take Away</button>
        
 
 
